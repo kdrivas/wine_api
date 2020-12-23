@@ -1,0 +1,4 @@
+[cache]
+    s3 = s3cache
+['remote "s3cache"']
+    url = s3://rimac-analytics-temporal/individuals/Dante/mlflow_testing/cache/
