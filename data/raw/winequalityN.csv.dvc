@@ -1,0 +1,4 @@
+outs:
+- etag: d1088fe0cd8f22710ec202dcf4d9ba97
+  size: 390376
+  path: s3://rimac-analytics-temporal/individuals/Dante/mlflow_testing/data/input/raw/winequalityN.csv
