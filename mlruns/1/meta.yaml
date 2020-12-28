@@ -1,4 +1,0 @@
-artifact_location: file:///home/ec2-user/SageMaker/projects/wine_api/mlruns/1
-experiment_id: '1'
-lifecycle_stage: active
-name: run_model
