@@ -7,7 +7,9 @@ import git
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import train_test_split
 import mlflow 
+from src.decorators import commitme
 
+@commitme
 def run_tree(data, target_col, max_depth, min_samples_leaf, random_state):
     warnings.filterwarnings("ignore")
     
@@ -32,5 +34,11 @@ def run_tree(data, target_col, max_depth, min_samples_leaf, random_state):
         metric = roc_auc_score(valid_y, y_trn_pred[:,1])
         mlflow.log_metric('metric', metric)
         
+def main(data, target_col, max_depth, min_samples_leaf, random_state, commit=False):
+    if commit:
+        run_tree(data, target_col, max_depth, min_samples_leaf, random_state)
+    else:
+        run_tree.unwrapped(data, target_col, max_depth, min_samples_leaf, random_state)
+        
 if __name__ == '__main__':
-    Fire(run_tree)
+    Fire(main)

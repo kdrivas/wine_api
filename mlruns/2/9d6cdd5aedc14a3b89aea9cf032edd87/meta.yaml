@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ec2-user/SageMaker/projects/wine_api/mlruns/2/9d6cdd5aedc14a3b89aea9cf032edd87/artifacts
+end_time: 1609174034390
+entry_point_name: ''
+experiment_id: '2'
+lifecycle_stage: active
+name: ''
+run_id: 9d6cdd5aedc14a3b89aea9cf032edd87
+run_uuid: 9d6cdd5aedc14a3b89aea9cf032edd87
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1609174034339
+status: 4
+tags: []
+user_id: ec2-user

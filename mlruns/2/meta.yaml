@@ -1,0 +1,4 @@
+artifact_location: file:///home/ec2-user/SageMaker/projects/wine_api/mlruns/2
+experiment_id: '2'
+lifecycle_stage: active
+name: new_exp
