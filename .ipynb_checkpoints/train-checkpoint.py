@@ -29,7 +29,7 @@ def run_tree(data, target_col, max_depth, min_samples_leaf, random_state):
         # build model architecture
         clf = tree.DecisionTreeRegressor(max_depth=max_depth, min_samples_leaf=min_samples_leaf, random_state=random_state)
         clf = clf.fit(train_x, train_y)
-        y_trn_pred = clf.predict_proba(valid_x)
+        y_trn_pred = clf.predict(valid_x)
         
         metric = mean_squared_error(valid_y, y_trn_pred[:,1])
         mlflow.log_metric('metric', metric)
