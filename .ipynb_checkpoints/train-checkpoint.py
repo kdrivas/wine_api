@@ -4,7 +4,7 @@ from fire import Fire
 import warnings 
 import git
 
-from sklearn.metrics import roc_auc_score
+from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 import mlflow 
 from src.decorators import commitme
@@ -27,11 +27,11 @@ def run_tree(data, target_col, max_depth, min_samples_leaf, random_state):
         mlflow.set_tag("git.hash", sha)
         
         # build model architecture
-        clf = tree.DecisionTreeClassifier(max_depth=max_depth, min_samples_leaf=min_samples_leaf, random_state=random_state)
+        clf = tree.DecisionTreeRegressor(max_depth=max_depth, min_samples_leaf=min_samples_leaf, random_state=random_state)
         clf = clf.fit(train_x, train_y)
         y_trn_pred = clf.predict_proba(valid_x)
         
-        metric = roc_auc_score(valid_y, y_trn_pred[:,1])
+        metric = mean_squared_error(valid_y, y_trn_pred[:,1])
         mlflow.log_metric('metric', metric)
         
 def main(data, target_col, max_depth, min_samples_leaf, random_state, commit=False):
